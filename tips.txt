@@ -1,0 +1,23 @@
+docker run -it ubuntu = Atrela o console aberto a imagem selecionada! Evitando criarem multiplas imagens ao abrir um console/comando
+
+
+
+docker container prune = remove todos as imagens paradas
+
+docker rmi hello-world = Remove a imagem hello-world
+
+docker run -d “imagem” = desatrela a imagem executada ao terminal;
+
+docker run -P = atrela uma porta interna da imagem para ser acessada externamente.
+
+docker run -d -p --name meu-site imagem = Dá um nome a imagem;
+
+docker run -d -p 12345:80 dockersamples/static-site = atrela a porta desejada a imagem
+
+$ docker run -p -d 8080:3000 -v "C:\projetos\docker_first\volume-exemplo:/var/www" -w "/var/www" node npm start = -w configura a pasta que o projeto deve ser iniciado;
+
+docker network create --driver bridge minha-rede = cria uma network para ser utilizada entre os containes.
+
+docker run --name segundo-ubuntu -it --network minha-rede ubuntu = Inicia um novo container já dentro da rede cadastrada.
+
+apt-get update && apt-get install iputils-ping = instala ping nas imagens ubuntu
